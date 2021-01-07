@@ -1,0 +1,70 @@
+<html>
+
+	<head>
+		<title>
+			Tires
+		</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" />
+	</head>
+
+	<style>
+		body {
+			overscroll-behavior: none;
+		}
+	</style>
+
+	<script>
+		function autotab(current, to) {
+			document.getElementById(to).focus();
+		}
+		function autotab_len(current, len, to) {
+			if (document.getElementById(current).value.length == len) {
+				document.getElementById(to).focus();
+			}
+		}
+		function autoblur_len(current, len) {
+			if (document.getElementById(current).value.length == len) {
+			document.getElementById(current).blur();
+			}
+		}
+		function autoblur_sel(current) {
+			document.getElementById(current).blur();
+		}
+	</script>
+
+	<body>
+		<div>
+			<input id="mileage" type="number" style="width: 60%" placeholder="Mileage" onkeyup="autoblur_len('mileage', 6)"></input>
+		</div>
+
+		<br>
+		
+		<div>
+			<input id="psi_front" type="number" style="width: 15%;" placeholder="Front" onkeyup="autotab_len('psi_front', 2, 'psi_rear')"></input> /
+			<input id="psi_rear"  type="number" style="width: 15%;" placeholder="Rear" onkeyup="autotab_len('psi_rear', 2, 'tire_size')"></input> PSI
+		</div>
+
+		<br>
+
+		<div>
+			<input id="tire_size" type="number" style="width: 60%" placeholder="Tire size" onkeyup="autoblur_len('tire_size', 7)"></input>
+		</div>
+
+		<br>
+
+		<div>
+			<label>DOT:</label><br>
+			<textarea id="dot" style="text-transform: uppercase; width: 60%" rows="4"></textarea><br>
+		</div>
+
+		<br>
+		
+		<div>
+			<label>Comments:</label><br>
+			<textarea id="comments" style="text-transform: uppercase; width: 60%" rows="15"></textarea><br>
+		</div>
+	</body>
+	
+</html>
