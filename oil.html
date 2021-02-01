@@ -32,9 +32,38 @@
 		function autoblur_sel(current) {
 			document.getElementById(current).blur();
 		}
+		
+		function timer() {
+			var time = 0;
+			
+			setInterval(function(){
+				time++;
+				var hrs = Math.floor(time / 3600)
+				var mins = Math.floor(time/60)%60;
+				var secs = Math.floor(time % 60);
+
+				if (hrs < 10) {
+					hrs = "0" + hrs;
+				}
+				
+				if(mins<10){
+					mins = "0" + mins;
+				}
+				if(secs<10){
+					secs = "0" + secs;
+				}
+				
+				document.getElementById("timer").innerHTML = "Time: " + hrs + ":" + mins + ":" + secs;
+			},1000);
+		}
+
 	</script>
 
-	<body>
+	<body onload="timer()">
+		<div>
+			<p id="timer"></p>
+		</div>
+		
 		<div>
 			<input id="mileage" type="number" style="width: 60%" placeholder="Mileage" onkeyup="autoblur_len('mileage', 6)"></input>
 		</div>
@@ -104,6 +133,19 @@
 				<option>15W-40</option>
 			</select>
 			<input id="capacity" style="width: 20%;" placeholder="Capacity" type="number" onkeyup="autoblur_len('capacity', 3)"></input>
+		</div>
+
+		<br>
+
+		<div>
+			<select id="pre_service" style="width: 39%;" oninput="autoblur_sel('pre_service')">
+				<option>Pre-service</option>
+				<option>No oil</option>
+				<option>1 qt low</option>
+				<option>1/2 qt low</option>
+				<option>Full</option>
+				<option>Overfilled</option>
+			</select>
 		</div>
 
 		<br>
