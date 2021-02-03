@@ -1,0 +1,15 @@
+body {
+    overscroll-behavior: none;
+}
+
+
+.home-container {
+    margin-top: 20vh;
+    margin-left: 15vw;
+}
+
+.home-button {
+    width: 250px;
+    margin: 10px;
+    padding: 5px;
+}
