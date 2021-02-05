@@ -13,10 +13,6 @@
 	<script src="scripts/scripts.js"></script>
 
 	<body>
-		<div>
-			<p>Time: <span id="hrs">00</span>:<span id="mins">00</span>:<span id="secs">00</span></p>
-			<script>timer()</script>
-		</div>
 
 		<div>
 			<input id="mileage" type="number" style="width: 60%" placeholder="Mileage" onkeyup="autoblur_len('mileage', 6)"></input>
@@ -87,19 +83,6 @@
 				<option>15W-40</option>
 			</select>
 			<input id="capacity" style="width: 20%;" placeholder="Capacity" type="number" onkeyup="autoblur_len('capacity', 3)"></input>
-		</div>
-
-		<br>
-
-		<div>
-			<select id="pre_service" style="width: 39%;" oninput="autoblur_sel('pre_service')">
-				<option>Pre-service</option>
-				<option>No oil</option>
-				<option>1 qt low</option>
-				<option>1/2 qt low</option>
-				<option>Full</option>
-				<option>Overfilled</option>
-			</select>
 		</div>
 
 		<br>
