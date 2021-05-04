@@ -17,7 +17,7 @@
 	<body>
 		<div class="service-container">
 			<div class="form-group">
-				<input id="mileage" type="tel" placeholder="Mileage" class="form-control form-control-sm"  onkeyup="autoblur_by_length('mileage', 7)"></input>
+				<input id="mileage" type="number" placeholder="Mileage" class="form-control form-control-sm"  onkeyup="autoblur_by_length('mileage', 7)"></input>
 			</div>
 
 			<div class="form-row">
@@ -110,12 +110,6 @@
 				<textarea placeholder="Comments" class="form-control form-control-sm" style="text-transform: uppercase;" rows="10"></textarea>
 			</div>
 		</div>
-
-		<script>
-			document.getElementById('mileage').addEventListener('input', function (e) {
-				var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})/);
-				e.target.value = !x[2] ? x[1] : x[1] + ',' + x[2]; }); 
-		</script>
 		
 	</body>
 
