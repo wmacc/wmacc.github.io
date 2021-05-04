@@ -21,9 +21,5 @@ body {
 }
 
 .service-container {
-    margin: 20px;
-}
-
-.top-buffer { 
-    margin-top:20px;
+    margin: 10px;
 }
