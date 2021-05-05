@@ -14,7 +14,3 @@ function autoblur_by_length(current, len) {
 function autoblur_select(current) {
     document.getElementById(current).blur();
 }
-
-function mileage_mask() {
-    
-}
