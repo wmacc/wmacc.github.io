@@ -13,7 +13,6 @@
 		<script src="scripts/scripts.js"></script>
 	</head>
 
-
 	<body>
 		<div class="service-container">
 			<div class="form-group">
@@ -107,22 +106,25 @@
 			</div>
 	
 			<div class="form-group">
-				<textarea placeholder="Comments" class="form-control form-control-sm" style="text-transform: uppercase;" rows="10"></textarea>
+				<textarea id="comments" placeholder="Comments" class="form-control form-control-sm" style="text-transform: uppercase;" rows="10"></textarea>
 			</div>
 		</div>
 
 		<script>
 			document.getElementById('mileage').addEventListener('input', function (e) {
-			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})/);
-			e.target.value = !x[2] ? x[1] : x[1] + ',' + x[2]; });
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? ',' + x[2] : '') : '';
+			});
 
 			document.getElementById('engine_size').addEventListener('input', function (e) {
-			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,1})/);
-			e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2]; });
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,1})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? '.' + x[2] : '') : '';
+			});
 
 			document.getElementById('oil_capacity').addEventListener('input', function (e) {
-			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,1})/);
-			e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2]; });
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,1})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? '.' + x[2] : '') : ''; 
+			});
 		</script>
 		
 	</body>
