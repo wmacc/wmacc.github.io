@@ -19,17 +19,20 @@
 				<input id="mileage" type="text" inputmode="numeric" placeholder="Mileage" class="form-control form-control-sm"  onkeyup="autoblur_by_length('mileage', 7)">
 			</div>
 
-			<div class="form-row">
-				<div class="form-group col">
-					<input id="psi_front" type="text" inputmode="numeric" placeholder="Front PSI" class="form-control form-control-sm" onkeyup="autotab_by_length('psi_front', 2, 'psi_rear')">
-				</div>
-				<div class="form-group col">
-					<input id="psi_rear" type="text" inputmode="numeric" placeholder="Rear PSI" class="form-control form-control-sm" onkeyup="autoblur_by_length('psi_rear',  2)">
-				</div>
+			<div class="form-group">
+				<input id="psi" type="text" inputmode="numeric" placeholder="Tire Pressure" class="form-control form-control-sm" onkeyup="autoblur_by_length('psi', 11)">
 			</div>
 
       <div class="form-group">
-				<input id="upc" type="text" inputmode="numeric" placeholder="UPC" class="form-control form-control-sm" onkeyup="autoblur_by_length('upc', 15)">
+				<input id="upc1" type="text" inputmode="numeric" placeholder="UPC #1" class="form-control form-control-sm" onkeyup="autoblur_by_length('upc1', 15)">
+			</div>
+
+			<div class="form-group">
+				<input id="upc2" type="text" inputmode="numeric" placeholder="UPC #2" class="form-control form-control-sm" onkeyup="autoblur_by_length('upc2', 15)">
+			</div>
+
+			<div class="form-group">
+				<input id="upc3" type="text" inputmode="numeric" placeholder="UPC #3" class="form-control form-control-sm" onkeyup="autoblur_by_length('upc3', 15)">
 			</div>
 
       <div class="form-group">
@@ -48,7 +51,22 @@
   			e.target.value = x[1] ? x[1] + (x[2] ? ',' + x[2] : '') : '';
 			});
 
-			document.getElementById('upc').addEventListener('input', function (e) {
+			document.getElementById('psi').addEventListener('input', function (e) {
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,2})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? ' / ' + x[2] + ' PSI' : '') : '';
+			});
+
+			document.getElementById('upc1').addEventListener('input', function (e) {
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,5})(\d{0,5})(\d{0,1})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? '-' + x[2] : '') + (x[3] ? '-' + x[3] : '') + (x[4] ? '-' + x[4] : '') : '';
+			});
+
+			document.getElementById('upc2').addEventListener('input', function (e) {
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,5})(\d{0,5})(\d{0,1})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? '-' + x[2] : '') + (x[3] ? '-' + x[3] : '') + (x[4] ? '-' + x[4] : '') : '';
+			});
+
+			document.getElementById('upc3').addEventListener('input', function (e) {
   			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,5})(\d{0,5})(\d{0,1})/);
   			e.target.value = x[1] ? x[1] + (x[2] ? '-' + x[2] : '') + (x[3] ? '-' + x[3] : '') + (x[4] ? '-' + x[4] : '') : '';
 			});

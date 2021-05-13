@@ -19,13 +19,8 @@
 				<input id="mileage" type="text" inputmode="numeric" placeholder="Mileage" class="form-control form-control-sm"  onkeyup="autoblur_by_length('mileage', 7)">
 			</div>
 
-			<div class="form-row">
-				<div class="form-group col">
-					<input id="psi_front" type="text" inputmode="numeric" placeholder="Front PSI" class="form-control form-control-sm" onkeyup="autotab_by_length('psi_front', 2, 'psi_rear')">
-				</div>
-				<div class="form-group col">
-					<input id="psi_rear"  type="text" inputmode="numeric" placeholder="Rear PSI" class="form-control form-control-sm" onkeyup="autoblur_by_length('psi_rear',  2)">
-				</div>
+			<div class="form-group">
+				<input id="psi" type="text" inputmode="numeric" placeholder="Tire Pressure" class="form-control form-control-sm" onkeyup="autoblur_by_length('psi', 11)">
 			</div>
 	
 			<div class="form-row">
@@ -73,7 +68,7 @@
 				</div>
 				
 				<div class="form-group col">
-					<input id="engine_size"  type="text" inputmode="numeric" placeholder="Engine" class="form-control form-control-sm" onkeyup="autoblur_by_length('engine_size', 3)">
+					<input id="engine_size"  type="text" inputmode="numeric" placeholder="Engine" class="form-control form-control-sm" onkeyup="autoblur_by_length('engine_size', 5)">
 				</div>
 			</div>
 	
@@ -96,9 +91,14 @@
   			e.target.value = x[1] ? x[1] + (x[2] ? ',' + x[2] : '') : '';
 			});
 
+			document.getElementById('psi').addEventListener('input', function (e) {
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,2})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? ' / ' + x[2] + ' PSI' : '') : '';
+			});
+
 			document.getElementById('engine_size').addEventListener('input', function (e) {
   			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,1})/);
-  			e.target.value = x[1] ? x[1] + (x[2] ? '.' + x[2] : '') : '';
+  			e.target.value = x[1] ? x[1] + (x[2] ? '.' + x[2] + ' L': '') : '';
 			});
 
 			document.getElementById('upc').addEventListener('input', function (e) {
