@@ -1,0 +1,59 @@
+<html>
+
+	<head>
+		<title>
+			Tires
+		</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+		<script src="scripts/scripts.js"></script>
+	</head>
+
+	<body>
+		<div class="service-container">
+			<div class="form-group">
+				<input id="mileage" type="text" inputmode="numeric" placeholder="Mileage" class="form-control form-control-sm"  onkeyup="autoblur_by_length('mileage', 7)">
+			</div>
+
+			<div class="form-group">
+				<input id="psi" type="text" inputmode="numeric" placeholder="Tire Pressure" class="form-control form-control-sm" onkeyup="autotab_by_length('psi', 11, 'tire_size')">
+			</div>
+
+			<div class="form-group">
+				<input id="tire_size" type="text" inputmode="numeric" placeholder="Tire Size" class="form-control form-control-sm" onkeyup="autoblur_by_length('tire_size',  10)">
+			</div>
+
+			<div class="form-group">
+				<textarea id="dot" placeholder="DOT" class="form-control form-control-sm" style="text-transform: uppercase;" rows="4"></textarea>
+			</div>
+
+			<div class="form-group">
+				<textarea id="comments" placeholder="Comments" class="form-control form-control-sm" style="text-transform: uppercase;" rows="10"></textarea>
+			</div>
+
+		</div>
+
+		<script>
+			document.getElementById('mileage').addEventListener('input', function (e) {
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? ',' + x[2] : '') : '';
+			});
+
+			document.getElementById('psi').addEventListener('input', function (e) {
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,2})/);
+  			e.target.value = x[1] ? x[1] + (x[2] ? ' / ' + x[2] + ' PSI' : '') : '';
+			});
+
+			document.getElementById('tire_size').addEventListener('input', function (e) {
+  			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,2})(\d{0,2})/);
+  			e.target.value = x[1] ? 'P' + x[1] + (x[2] ? '/' + x[2] : '') + (x[3] ? 'R' + x[3] : '') : '';
+			});
+		</script>
+
+	</body>
+	
+</html>
