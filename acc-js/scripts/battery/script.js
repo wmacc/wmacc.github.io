@@ -67,8 +67,6 @@ function renderVinData() {
   tdModel.textContent = data.Results[8].Value
   tdEngine.textContent = data.Results[71].Value
 
-li.removeChild(table) 
-
   li.appendChild(table)
   table.appendChild(tbody)
   tbody.appendChild(trSearch)
