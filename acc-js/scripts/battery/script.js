@@ -60,7 +60,7 @@ function renderVinData() {
   thYear.textContent = 'Year'
   thMake.textContent = 'Make'
   thModel.textContent = 'Model'
-  thEngine.textContent = 'Engine size'
+  thEngine.textContent = 'Engine Size'
   thSearch.textContent = data.SearchCriteria
   tdYear.textContent = data.Results[9].Value
   tdMake.textContent = data.Results[6].Value
