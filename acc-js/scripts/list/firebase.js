@@ -73,7 +73,7 @@ function renderListSize() {
   let trSize = document.createElement("tr")
   let thSize = document.createElement("th")
   let tdSize = document.createElement("td")
-  thSize.textContent = "Vehicles completed"
+  thSize.textContent = "Vehicles Completed"
   tdSize.textContent = size;
   table.className = "table table-sm table-striped table-bordered"
 
