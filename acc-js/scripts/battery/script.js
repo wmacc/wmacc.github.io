@@ -36,8 +36,6 @@ async function vinSubmit() {
 }
 
 function renderVinData() {
-document.querySelector("#vin-table").removeChild(li)
-
   let li = document.createElement("li")
   let table = document.createElement("table")
   let tbody = document.createElement("tbody")
