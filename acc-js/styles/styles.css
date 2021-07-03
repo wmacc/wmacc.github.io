@@ -1,0 +1,61 @@
+body {
+    overscroll-behavior: none;
+}
+
+::placeholder {
+    text-transform: none;
+}
+
+.home-container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-button {
+    width: 250px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.service-container {
+    margin: 20px;
+}
+
+.services-table {
+    margin: 20px;
+  }
+  
+.services-table th {
+      width: 50%;
+}
+
+.services-table td {
+    width: 50%;
+    text-align: right;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.thSearch {
+      text-align: center;
+      text-transform: uppercase;
+}
+
+.vin-table-container {
+      margin: 0;
+}
+
+.vin-table-container th {
+    width: 50%;
+}
+
+.vin-table-container td {
+  width: 50%;
+}
