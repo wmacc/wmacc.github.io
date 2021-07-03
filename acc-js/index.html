@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 
 <head>
@@ -7,17 +8,20 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 
+<script src="scripts/home/script.js"></script>
 
 <body>
 	<div class="home-container">
-		<a href="oil.html"><button class="home-button">OIL CHANGE</button></a><br>
-		<a href="tire.html"><button class="home-button">TIRES</button></a><br>
-		<a href="battery.html"><button class="home-button">BATTERY</button></a><br>
-		<a href="misc.html"><button class="home-button">MISC</button></a><br>
-		<a href="list.html"><button class="home-button">LIST</button></a><br>
+		<button class="home-button btn btn-primary" onclick="oil()">Oil Change</button><br>
+		<button class="home-button btn btn-primary" onclick="tire()">Tires</button><br>
+		<button class="home-button btn btn-primary" onclick="battery()">Battery</button><br>
+		<button class="home-button btn btn-primary" onclick="misc()">Misc.</button><br>
+		<button class="home-button btn btn-primary" onclick="list()">Vehicle List</button><br>
 	</div>
 </body>
 

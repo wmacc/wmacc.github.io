@@ -1,17 +1,14 @@
 function timeStarted() {
   timeStarted = Date();
-  console.log("Time started: " + timeStarted)
 }
 
 function timeFinished() {
   timeFinished = Date();
-  console.log("Time finished: " + timeFinished)
 }
 
 function totalTime() {
   timeFinished()
   totalTime = moment.utc(moment(timeFinished).diff(moment(timeStarted))).format("HH:mm:ss");
-  console.log("Total time: " + totalTime)
 }
 
 function oilSubmit() {
@@ -24,7 +21,7 @@ function oilSubmit() {
     total_time: totalTime
   })
     .then(() => {
-      window.location.replace("./index.html");
+      window.location.assign("./index.html");
     })
     .catch((error) => {
       console.error("Error writing document: ", error);
