@@ -1,5 +1,5 @@
 document.getElementById('mileage').addEventListener('input', function (e) {
-    var x = e.target.value.replace(/^0+\D/g, "").match(/(\d{0,3})(\d{0,3})/);
+    var x = e.target.value.replace(/\D/g, "").match(/(\d{0,3})(\d{0,3})/);
     e.target.value = x[1] ? x[1] + (x[2] ? "," + x[2] : "") : "";
 });
 
