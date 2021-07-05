@@ -1,7 +1,6 @@
 document.getElementById('mileage').addEventListener('input', function (e) {
     var x = e.target.value.replace(/^0\D/g, "").match(/(\d{3})(\d{3})/);
     e.target.value = x[1] ? x[1] + (x[2] ? "," + x[2] : "") : "";
-  }
 });
 
 document.getElementById("upc1").addEventListener("input", function (e) {
